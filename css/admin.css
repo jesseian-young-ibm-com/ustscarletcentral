@@ -1,0 +1,163 @@
+:root {
+  /* Theme Colors */
+  --text-gray: #000000;
+  --text-red: #9d0101;
+  --text-cream: #fffce2;
+  --text-gold: #b57c13;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Mulish", sans-serif;
+}
+
+body {
+  background: #fffce2;
+}
+
+.wrapper {
+  display: flex;
+  position: relative;
+}
+
+.wrapper .sidebar {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background: #9d0101;
+  padding: 10px 0;
+}
+
+.wrapper .sidebar img {
+  width: 60px;
+  height: 50px;
+}
+
+.wrapper .sidebar .logo {
+  text-align: center;
+}
+
+.wrapper .sidebar h3 {
+  color: #000000;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrapper .sidebar h5 {
+  color: #fff;
+  text-transform: uppercase;
+  margin-left: 20px;
+  letter-spacing: 2px;
+}
+
+.wrapper .sidebar ul li {
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(225, 225, 0, 0.05);
+}
+
+.wrapper .sidebar ul li a {
+  color: #fffce2;
+  display: block;
+  text-decoration: none;
+  font-family: "Mulish", sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.wrapper .sidebar ul li:hover {
+  background: #b57c13;
+}
+
+.wrapper .sidebar ul li:hover a {
+  color: #fffce2;
+}
+
+.wrapper .main_content {
+  width: 100%;
+  margin-left: 200px;
+}
+
+.wrapper .main_content .header {
+  padding: 20px;
+  background: #fff;
+  color: #000000;
+  border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main_content .info {
+  margin: 20px;
+  color: #000000;
+  line-height: 25px;
+}
+
+.wrapper .main_content .info div {
+  margin-bottom: 20px;
+}
+
+.header {
+  text-align: right;
+}
+
+.header .button-34 {
+  background: #b57c13;
+  border-radius: 999px;
+  box-shadow: #b57c13 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji",
+    NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
+    EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  text-decoration: none;
+}
+
+/*------------- MAIN CONTENT CSS START ------------*/
+
+.main_content {
+  width: 100%;
+  margin-left: 250px;
+}
+
+table,
+td {
+  border: 1px solid;
+  border-collapse: collapse;
+  margin: 25px 0;
+}
+
+th,
+td {
+  padding: 15px;
+}
+
+thead tr {
+  background-color: #9d0101;
+  color: #ffff;
+  text-align: left;
+  padding: 20px;
+}
+
+label {
+  font-family: "Mulish", sans-serif;
+  font-variant: small-caps;
+}

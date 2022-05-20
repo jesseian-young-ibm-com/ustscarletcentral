@@ -1,0 +1,23 @@
+.eventsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0 100px 0;
+}
+
+.eventsTitle {
+  text-align: center;
+}
+
+/*responsive*/
+@media (max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
+}
