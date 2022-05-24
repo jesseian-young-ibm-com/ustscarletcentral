@@ -34,6 +34,12 @@ if (isset($_GET['requestId'])) {
             echo "Mailer Error: " . $mail->ErrorInfo;
         } else {
 
+            	//echo '<pre>';
+	//	$_SESSION['id']=$result['id'];
+		//echo $pass;
+       // echo '</pre>';
+       // exit;
+
             $pass = md5($pass);
 
             $sql = "INSERT INTO members (username, password, first_name, last_name, student_number, ust_email, department, phone_number, year_level, birthday,verification_code) VALUES (?,?,?,?,?,?,?,?,?,?,?)";

@@ -27,7 +27,13 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         $query = $db->query("SELECT * FROM members WHERE username = '$username' AND password = '$password' ");
         if ($query->num_rows > 0) {
             $result = $query->fetch_assoc();
-            if ($result['is_verified'] == 1) {
+           /* if ($result['is_verified'] == 1) {
+              //  	echo '<pre>';
+		//$_SESSION['id']=$result['id'];
+		//echo $_SESSION['id'];
+       // echo $result['is_verified'];
+       // echo '</pre>';
+       // exit;
                 if ($result['first_time'] == 0) {
                     $_SESSION['logged_in'] = true;
                     $_SESSION['id'] = $result['id'];
@@ -41,9 +47,38 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                     exit();
                 }
             } else {
+
+      	//echo '<pre>';
+		//$_SESSION['id']=$result['id'];
+		//echo $_SESSION['id'];
+        //echo $query->fetch_assoc();
+       // echo '</pre>';
+       // exit;
+
+                header("Location: ../memberlogin.php?error=Your account is not yet verified");
+                exit();
+            }*/
+
+            if($result['is_verified'] == 0){
                 header("Location: ../memberlogin.php?error=Your account is not yet verified");
                 exit();
             }
+
+            elseif($result['is_verified'] == 1){
+                if ($result['first_time'] == 0) {
+                    $_SESSION['logged_in'] = true;
+                    $_SESSION['id'] = $result['id'];
+                    header("Location: ../memberhome.php");
+                    exit();
+                } else {
+                    $_SESSION['logged_in'] = true;
+                    $_SESSION['first_time'] = true;
+                    $_SESSION['id'] = $result['id'];
+                    header("Location: ../memberFirstTime.php");
+                    exit();
+                } 
+            }
+
         } else {
             header("Location: ../memberlogin.php?error=Wrong credentials");
         }
