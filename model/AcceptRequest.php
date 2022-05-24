@@ -2,7 +2,7 @@
 
 include 'DatabaseConn.php';
 include "Emailer.php";
-
+session_start();
 if (isset($_GET['requestId'])) {
 
     $query = $db->query("SELECT * FROM requests WHERE id = '$_GET[requestId]' ");
@@ -24,7 +24,7 @@ if (isset($_GET['requestId'])) {
         $mail->SetFrom($gmailUsername, "USTSC");
         $mail->Subject = "REQUEST ACCEPTED";
         $mail->Body = "<p>Hi your request is accepted! Please click the link below to activate your account:</p>"
-            . "<br/> <a href='http://localhost/ustsc/model/Confirm.php?vercode=$verification_code'> VERIFY and LOGIN</a> "
+            . "<br/> <a href='http://localhost/ustscarletcentral/model/Confirm.php?vercode=$verification_code'> VERIFY and LOGIN</a> "
             . "<br/> <p>Your default login credentials is your student number.</p>"
             . "<br/> <p>Username: '$snum'</p>"
             . "<br/> <p>Password: '$snum'</p>";

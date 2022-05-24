@@ -52,3 +52,4 @@ if (isset($_POST['title']) && isset($_POST['short_description']) && isset($_POST
     header("Location: ../../adminaddnew.php?error=Please fill in all required fields");
     exit();
 }
+?>

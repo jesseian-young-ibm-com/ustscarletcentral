@@ -2,12 +2,34 @@
 session_start();
 
 include "DatabaseConn.php";
-
+$query=$db->query("SELECT id FROM members WHERE username='2020123456'");
+echo '<pre>';
+// $_SESSION['id']=$result['id'];
+ //echo $_SESSION['id'];
+// echo "Hello WOrld";
+ //echo '</pre>';
+	while($result=$query->fetch_array()){
+		echo '<pre>';
+		$_SESSION['id']=$result['id'];
+		//echo $_SESSION['id'];
+        echo '</pre>';
+        //exit;
+	}
 $query = $db->query("SELECT * FROM members WHERE id='$_SESSION[id]'");
 while ($username = $query->fetch_assoc()) {
-
+  echo '<pre>'; 
+    // $_SESSION['id']=$result['id'];
+ //echo $_SESSION['id'];
+ echo "Hello WOrld";
+ echo '</pre>';
+ //exit;
     if (isset($_POST['new_password']) && isset($_POST['confirm_new_password'])) {
-
+        echo '<pre>'; 
+        // $_SESSION['id']=$result['id'];
+     //echo $_SESSION['id'];
+    // echo "Hello WOrld";
+    // echo '</pre>';
+     //exit;
         function validate($data)
         {
             $data = trim($data);
@@ -25,16 +47,19 @@ while ($username = $query->fetch_assoc()) {
         } else if ($new_password !== $confirm_new_password) {
             header("Location: ../memberFirstTime.php?error=Confirm password does not match");
             exit();
-        } else if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $new_password)) {
-            header("Location: ../memberFirstTime.php?error=New password does not meet the requirements<br>"
-                . "Password should contains: <br>"
-                . "- atleast 1 uppercase character <br>"
-                . "- atleast 1 lowercase character <br>"
-                . "- atleast 1 symbol character <br>"
-                . "- atleast 1 number<br>"
-                . "- minimum of 8 characters <br>&");
-            exit();
-        } else {
+        } 
+        // else if (!preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $new_password)) {
+        //     header("Location: ../memberFirstTime.php?error=New password does not meet the requirements<br>"
+        //         . "Password should contains: <br>"
+        //         . "- atleast 1 uppercase character <br>"
+        //         . "- atleast 1 lowercase character <br>"
+        //         . "- atleast 1 symbol character <br>"
+        //         . "- atleast 1 number<br>"
+        //         . "- minimum of 8 characters <br>&");
+        //     exit();
+        // } 
+        
+        else {
 
             $hash = md5($new_password);
 
@@ -47,3 +72,5 @@ while ($username = $query->fetch_assoc()) {
         exit();
     }
 }
+
+

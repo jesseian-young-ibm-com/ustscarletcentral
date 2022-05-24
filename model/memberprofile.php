@@ -56,11 +56,11 @@ include "model/DatabaseConn.php";
 			font-family: 'Mulish', sans-serif;
 			font-weight: bold;
 			font-size: 150%;
-			text align: center;
+			text-align: center;
 		}
 
 		.textbox {
-			margin top: 50%;
+			margin-top: 50%;
 
 			border-radius: 10px;
 			color: #000000;
@@ -78,6 +78,10 @@ include "model/DatabaseConn.php";
 
 <body>
 	<?php
+	// echo '<pre>';
+            // var_dump($_SESSION['id']);
+            // echo '</pre>';
+            // exit;
 	$query = $db->query("SELECT * FROM members WHERE id='$_SESSION[id]'");
 	while ($result = $query->fetch_array()) {
 	?>

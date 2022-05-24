@@ -56,11 +56,11 @@ include "model/DatabaseConn.php";
 			font-family: 'Mulish', sans-serif;
 			font-weight: bold;
 			font-size: 150%;
-			text-align: center;
+			/* textalign: center; */
 		}
 
 		.textbox {
-			margin-top: 50%;
+			/* margin top: 50%; */
 
 			border-radius: 10px;
 			color: #000000;
@@ -78,9 +78,35 @@ include "model/DatabaseConn.php";
 
 <body>
 	<?php
+
+	//$query=$db->query("SELECT id FROM admin WHERE username='2020123456'");
+	    // echo '<pre>';
+		//$_SESSION['id']=$result['id'];
+	// 	$query=$db->query("SELECT id FROM admin WHERE id='$_SESSION[id]'");
+	// 	 while($result=$query->fetch_array()){
+	//      echo '<pre>';
+	//  	$_SESSION['id']=$result['id'];
+	//  	echo $_SESSION['id'];
+    //      echo '</pre>';
+    //      exit;
+	//  }
+
+
+	//$query=$db->query("SELECT id FROM admin WHERE id='$_SESSION[id]'");
+	
+	//while($result=$query->fetch_array()){
+		//echo '<pre>';
+	//	$_SESSION['id']=$result['id'];
+		//echo $_SESSION['id'];
+        //echo '</pre>';
+        //exit;
+//	}
+
+
 	$query = $db->query("SELECT * FROM members WHERE id='$_SESSION[id]'");
 	while ($result = $query->fetch_array()) {
 	?>
+		
 		<div class="wrapper">
 			<h1> Hello there, <?= $result['first_name'] ?>. </h1><br>
 
@@ -128,6 +154,7 @@ include "model/DatabaseConn.php";
 			</form>
 
 		</div>
+
 	<?php } ?>
 
 	<?php if (isset($_GET['success'])) { ?>
@@ -167,5 +194,6 @@ include "model/DatabaseConn.php";
 	</script>
 
 	<?php
+
 	include "./includes/footer.php";
 	?>

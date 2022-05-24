@@ -15,8 +15,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         return $data;
     }
 
-    $username = validate($_POST['username']);
-    $password = validate($_POST['password']);
+    $username = $_POST['username'];
+    $password = $_POST['password'];
     $password = md5($password);
 
     if (empty($username) || empty($password)) {
